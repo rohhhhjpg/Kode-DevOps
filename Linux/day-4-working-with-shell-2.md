@@ -128,4 +128,69 @@ grep Hello sample.txt | less
 | tee     | Display and store output | echo $SHELL | tee shell.txt            |
 | tee -a  | Append output            | echo "This is bash" | tee -a shell.txt |
 
+## ■ VI Editor (Visual Editor)
+
+VI is a powerful text editor available on almost all Unix/Linux systems. A common, enhanced version is **Vim** (Vi IMproved), which supports all standard VI concepts and commands. To open a file, use: `vi file.txt`.
+
+## ■ Editor Modes
+
+The editor operates in three main modes. You must press **Esc** to return to Command Mode from any other mode.
+
+| Mode | Trigger | Usage |
+| :--- | :--- | :--- |
+| Command Mode | Default / `Esc` | Move cursor, delete text, copy/paste, undo/redo |
+| Insert Mode | `i`, `a`, `o`, etc. | Enter and edit text in the file |
+| Last Line Mode | `:` | Save, quit, and advanced search/replace |
+
+## ■ Navigation (Command Mode)
+
+You can use standard arrow keys or the traditional HJKL keys to move around the file.
+
+| Command | Usage |
+| :--- | :--- |
+| k | Move up |
+| j | Move down |
+| h | Move left |
+| l | Move right |
+
+## ■ Editing & Manipulation (Command Mode)
+
+| Command | Usage | Example |
+| :--- | :--- | :--- |
+| yy | Copy (yank) a line | Move to line and press `yy` |
+| p | Paste copied text | Press `p` to paste below cursor |
+| x | Delete a single letter | Position cursor on letter and press `x` |
+| dd | Delete (cut) current line | Move to line and press `dd` |
+| d[n]d | Delete multiple lines | `d3d` deletes 3 lines (replace number to change amount) |
+| u | Undo last change | Press `u` |
+| Ctrl + r | Redo last change | Press `Ctrl + r` |
+
+## ■ Entering Insert Mode (Writing Data)
+
+| Command | Usage |
+| :--- | :--- |
+| i | Insert before the cursor (lowercase) |
+| I | Insert at the beginning of the line (uppercase) |
+| a | Append after the cursor (lowercase) |
+| A | Append at the end of the line (uppercase) |
+| o | Open a new line below the current line (lowercase) |
+| O | Open a new line above the current line (uppercase) |
+
+## ■ Searching (Command Mode)
+
+| Command | Usage | Result of 'n' / 'N' |
+| :--- | :--- | :--- |
+| /pattern | Search forward for pattern | n (find next down), N (find previous up) |
+| ?pattern | Search backward for pattern | n (find next up), N (find previous down) |
+
+## ■ Saving and Exiting (Last Line Mode & Command Mode)
+
+| Command | Usage | Example |
+| :--- | :--- | :--- |
+| :w | Save the file | `:w` |
+| :q | Exit VI | `:q` |
+| :wq | Save and quit | `:wq` |
+| :q! | Quit without confirmation (discard changes) | `:q!` |
+| :wq! | Force save and quit | `:wq!` |
+| ZZ | Save and quit (Command Mode) | `Shift + ZZ` |
 
